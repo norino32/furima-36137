@@ -29,14 +29,19 @@ Things you may want to cover:
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-| name               | string | null: false |
+| nickname           | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| first_name_kana    | string | null: false |
+| birthday           | date   | null: false |
 
 ### Association
 
-* has_many :purchase
-* has_many :item
+* has_many :purchases
+* has_many :items
 
 ## purchases テーブル(購入情報)
 
@@ -49,6 +54,7 @@ Things you may want to cover:
 
 * belongs_to :user
 * belongs_to :item
+* has_one :residences
 
 ## items テーブル(商品情報)
 
