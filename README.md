@@ -31,7 +31,7 @@ Things you may want to cover:
 | ------------------ | ------ | ----------- |
 | name               | string | null: false |
 | email              | string | null: false |
-| password           | string | null: false |
+| encrypted_password | string | null: false |
 
 ### Association
 
@@ -64,5 +64,23 @@ Things you may want to cover:
 | days delivery_id    | integer    | null: false                    |
 | price               | integer    | null: false                    |
 
+### Association
+
 * belongs_to :user
 * has_one :purchase
+
+## residences テーブル(発送先住所)
+
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| purchase            | references | null: false, foreign_key: true |
+| postal_code         | string     | null: false                    |
+| delivery_id         | integer    | null: false                    |
+| municipality        | string     | null: false                    |
+| address             | string     | null: false                    |
+| building_name       | string     |                                |
+| phone_number        | string     | null: false                    |
+
+### Association
+
+* belongs_to :purchase
